@@ -1,0 +1,25 @@
+pre-commit:
+  parallel: true 
+  commands:
+    lint:write:
+      glob: "**/*.{js,ts,jsx,tsx,json}"
+      run: pnpm lint:fix {staged_files}
+      stage_fixed: true
+    format:write:
+      glob: "**/*.{js,ts,jsx,tsx,json}"
+      run: pnpm format:fix {staged_files}
+      stage_fixed: true
+    type-check:
+      run: pnpm check-types --filter=[HEAD]
+
+pre-push:
+  parallel: true
+  commands:
+    verify-check:
+      run: pnpm verify:ci
+
+
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: pnpm commitlint --edit {1}

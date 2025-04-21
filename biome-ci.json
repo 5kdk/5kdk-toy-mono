@@ -1,0 +1,51 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "extends": ["./biome.json"],
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noConsoleLog": {
+          "level": "error"
+        },
+        "noExplicitAny": "error",
+        "noEmptyBlock": {
+          "level": "error"
+        }
+      },
+      "correctness": {
+        "noUnusedFunctionParameters": {
+          "level": "error"
+        },
+        "useExhaustiveDependencies": "error",
+        "noUnusedVariables": {
+          "level": "error"
+        },
+        "noUnusedImports": {
+          "level": "error"
+        }
+      },
+      "style": {
+        "noImplicitBoolean": "error",
+        "useTemplate": {
+          "level": "error"
+        }
+      },
+      "performance": {
+        "noDelete": "error",
+        "noReExportAll": "error",
+        "noAccumulatingSpread": "error"
+      },
+      "complexity": {
+        "noStaticOnlyClass": {
+          "level": "error"
+        },
+        "noUselessFragments": {
+          "level": "error"
+        },
+        "useOptionalChain": {
+          "level": "error"
+        }
+      }
+    }
+  }
+}

@@ -2,20 +2,24 @@
   "name": "5kdk-toy-mono",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "build": "turbo run build",
     "lint": "turbo run lint",
-    "format": "biome format .",
     "check-types": "turbo run check-types",
-    "format-and-lint": "biome check .",
-    "format-and-lint:fix": "biome check . --write"
+    "format:fix": "biome format --write .",
+    "lint:fix": "biome check --write .",
+    "verify:ci": "biome check --config-path=biome-ci.json --diagnostic-level=error --write . && pnpm check-types",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "lefthook": "^1.11.11",
     "turbo": "^2.5.0",
     "typescript": "5.8.2"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.9.0",
   "engines": {
     "node": ">=18"
   }
