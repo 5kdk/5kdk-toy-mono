@@ -1,20 +1,47 @@
+import { type VariantProps, cva } from "class-variance-authority";
 import { cn } from "@repo/ui/lib/cn";
 
-interface {{ pascalCase name }}Props extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
+const {{ camelCase name }}Variants = cva(
+  "{{ kebabCase name }}-base",
+  {
+    variants: {
+      variant: {
+        default: "{{ kebabCase name }}-default",
+        // 필요한 variants 추가
+      },
+      size: {
+        default: "{{ kebabCase name }}-size-default",
+        // 필요한 size 추가
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+export interface {{ pascalCase name }}Props 
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof {{ camelCase name }}Variants> {
 }
 
 export function {{ pascalCase name }}({ 
   children,
   className,
+  variant,
+  size,
   ...props
 }: {{ pascalCase name }}Props) {
   return (
     <div 
-      className={cn("", className)}
+      data-component="{{ kebabCase name }}"
+      className={cn({{ camelCase name }}Variants({ variant, size, className }))}
       {...props}
     >
       {children}
     </div>
   );
 }
+
+export { {{ camelCase name }}Variants };
