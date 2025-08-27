@@ -29,9 +29,9 @@ importers:
 
   apps/ama:
     dependencies:
-      '@repo/ui':
+      '@repo/ds':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/ds
       next:
         specifier: ^15.3.0
         version: 15.3.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -63,9 +63,9 @@ importers:
 
   apps/ds-storybook:
     dependencies:
-      '@repo/ui':
+      '@repo/ds':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/ds
       '@tailwindcss/vite':
         specifier: ^4.1.5
         version: 4.1.5(vite@6.3.5(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2))
@@ -116,9 +116,7 @@ importers:
         specifier: ^6.3.5
         version: 6.3.5(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)
 
-  packages/typescript-config: {}
-
-  packages/ui:
+  packages/ds:
     dependencies:
       '@radix-ui/react-slot':
         specifier: ^1.2.2
@@ -181,6 +179,8 @@ importers:
       typescript:
         specifier: 5.8.2
         version: 5.8.2
+
+  packages/typescript-config: {}
 
 packages:
 

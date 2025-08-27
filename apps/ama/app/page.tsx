@@ -1,4 +1,5 @@
-// import { Button } from "@repo/ui/button";
+import { Button } from "@repo/ds/components/button";
+// import { Button } from "@repo/ds/components/button";
 import Image, { type ImageProps } from "next/image";
 import styles from "./page.module.css";
 
@@ -31,6 +32,8 @@ export default function Home() {
           height={38}
           priority={true}
         />
+
+        <Button>기본버튼~</Button>
         <ol>
           <li>
             Get started by editing <code>apps/web/app/page.tsx</code>

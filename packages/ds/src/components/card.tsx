@@ -1,4 +1,4 @@
-import { cn } from "../lib/cn";
+import { cn } from "@repo/ds/lib/cn";
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
