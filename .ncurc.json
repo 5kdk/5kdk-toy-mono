@@ -1,0 +1,6 @@
+{
+  "deep": true,
+  "upgrade": true,
+  "packageManager": "pnpm",
+  "target": "minor"
+}

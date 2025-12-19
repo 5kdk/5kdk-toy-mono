@@ -30,10 +30,15 @@ export default function Home() {
           alt="Turborepo logo"
           width={180}
           height={38}
-          priority={true}
+          preload={true}
         />
 
-        <Button>기본버튼~</Button>
+        <Button variant="default">기본버튼</Button>
+        <Button variant="destructive">삭제버튼</Button>
+        <Button variant="outline">아웃라인버튼</Button>
+        <Button variant="secondary">보조버튼</Button>
+        <Button variant="ghost">고스트버튼</Button>
+        <Button variant="link">링크버튼</Button>
         <ol>
           <li>
             Get started by editing <code>apps/web/app/page.tsx</code>

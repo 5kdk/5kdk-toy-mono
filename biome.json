@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["**/node_modules/**", "**/dist/**", "**/.next/**", "**/build/**", "**/.turbo/**"]
+    "includes": ["**", "!**/node_modules", "!**/dist", "!**/.next", "!**/build", "!**/.turbo"]
   },
   "formatter": {
     "enabled": true,
@@ -16,8 +16,11 @@
     "lineWidth": 100,
     "lineEnding": "lf"
   },
-  "organizeImports": {
-    "enabled": true
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
   },
   "linter": {
     "enabled": true,
@@ -43,8 +46,8 @@
       },
       "suspicious": {
         "recommended": true,
-        "noConsoleLog": "warn",
-        "noExplicitAny": "error"
+        "noExplicitAny": "error",
+        "noConsole": { "level": "warn", "options": { "allow": ["log"] } }
       },
       "style": {
         "recommended": true,
@@ -54,10 +57,6 @@
           "fix": "safe",
           "level": "error",
           "options": { "syntax": "shorthand" }
-        },
-        "useShorthandArrayType": {
-          "fix": "safe",
-          "level": "error"
         },
         "useFilenamingConvention": {
           "level": "warn",
